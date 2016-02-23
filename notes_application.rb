@@ -11,7 +11,7 @@ class NotesApplication
     end
     end
 
-    def errorHandler author
+    def errorHandler _author
     raise "No Symbols or digits allowed " if @author.include? (/[\W\D]/)
     raise "Entry must be a string" if !@author.is_a? String
     raise "Author value must be put" if @author.empty? 
@@ -59,7 +59,7 @@ class NotesApplication
     end
 
 
-   def search search_text
+    def search search_text
         @notes.each { |notecontent|
             if notecontent.include?(search_text)
                 "Showing results for search #{search_text}\n\nNote ID: #{@notes.index(notecontent)}\n\n#{notecontent}\n\nBy Author #{@author}"
@@ -69,7 +69,7 @@ class NotesApplication
         }
     end
 
-    def delete note_id
+    def delete _note_id
 
         @notes.delete_at(@note_id)
         puts @notes
@@ -84,5 +84,5 @@ class NotesApplication
             @notes[note_id] = new_content
     end
 
-  end
+end
 end

@@ -46,7 +46,7 @@ RSpec.describe 'NotesApplication' do
     end
 
     it 'returns the last note in notes' do
-    expect(faith.get -1).to eq 'Move on'
+    expect(faith.get (-1)).to eq 'Move on'
     end
 
     it 'returns the second note in notes' do
@@ -101,6 +101,6 @@ RSpec.describe 'NotesApplication' do
     expect {NotesApplication.new(nil)}.to raise_error "Please enter valid author name"
     end     
   end	
-end
-end
+  end
+  end
 end
